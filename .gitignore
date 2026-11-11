@@ -1,0 +1,19 @@
+# Segredos
+.env
+.env.*
+!.env.example
+
+# Dependências e builds (o stack decide o resto)
+node_modules/
+.venv/
+__pycache__/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+
+# Sistema / editor
+.DS_Store
+*.log
+.vscode/*
+!.vscode/extensions.json

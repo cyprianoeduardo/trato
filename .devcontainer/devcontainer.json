@@ -1,0 +1,40 @@
+{
+  // Dev Container do trato. Debian + mise. Motor: Podman rootless do usuário dev.
+  // Stack ainda indefinido: quando escolher, acrescente as ferramentas no mise.toml (não aqui).
+  // Ver docs/adr/0002, 0004 (credenciais), 0005 (host Bluefin) e 0003 (Linear).
+  "name": "trato",
+  "image": "mcr.microsoft.com/devcontainers/base:debian-12",
+
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+    // Sem "docker-outside-of-docker" e sem socket do Podman: ver docs/adr/0002.
+  },
+
+  // 1) chown dos volumes  2) mise + setup  3) Claude Code no PATH  4) git usa o gh DESTE container
+  "postCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.claude /home/vscode/.config && curl -fsSL https://mise.run | sh && ~/.local/bin/mise trust && ~/.local/bin/mise run setup && curl -fsSL https://claude.ai/install.sh | bash && sudo ln -sf /home/vscode/.local/bin/claude /usr/local/bin/claude && mkdir -p ~/.config/git && git config --global credential.helper '!gh auth git-credential'",
+  "postStartCommand": "echo 'eval \"$(~/.local/bin/mise activate bash)\"' >> ~/.bashrc",
+
+  "runArgs": ["--userns=keep-id"],
+
+  // Bluefin (SELinux): rótulo privado só na pasta deste projeto. Nunca label=disable (ADR 0005).
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,relabel=private",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  // Volumes com NOME FIXO (nunca ${devcontainerId}; ADR 0004).
+  // ~/.config guarda gh, git, Codex (CODEX_HOME) e o login do OpenCode (link em agentes:setup).
+  "mounts": [
+    "source=trato-config,target=/home/vscode/.config,type=volume",
+    "source=trato-claude,target=/home/vscode/.claude,type=volume"
+  ],
+
+  "containerEnv": { "GIT_CONFIG_GLOBAL": "/home/vscode/.config/git/config" },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "openai.chatgpt"
+      ]
+    }
+  }
+}

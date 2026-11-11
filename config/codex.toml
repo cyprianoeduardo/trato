@@ -1,0 +1,11 @@
+# Copiado para $CODEX_HOME/config.toml por "mise run agentes:setup" (só se ainda não existir).
+# O container é o sandbox: o sandbox próprio do Codex não funciona dentro de container.
+sandbox_mode = "danger-full-access"
+approval_policy = "on-request"
+
+# Linear (MCP oficial). Login: codex mcp login linear
+# A confirmar na versão instalada: se "url" não for aceito, use
+#   command = "npx"
+#   args = ["-y", "mcp-remote", "https://mcp.linear.app/sse"]
+[mcp_servers.linear]
+url = "https://mcp.linear.app/mcp"

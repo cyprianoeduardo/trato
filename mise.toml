@@ -1,0 +1,54 @@
+# mise.toml — ambiente e comandos do trato.
+#   mise run setup            prepara o projeto (rode após clonar)
+#   mise run agentes:versoes  mostra a versão elegível (7+ dias) do Codex e do OpenCode
+#   mise run agentes:setup    instala Codex/OpenCode nas versões fixadas e prepara os logins
+#   mise run check            portão de qualidade (definition of done)
+#
+# Stack ainda não escolhido: ao decidir, acrescente aqui (ex.: pnpm, ou python + uv) e
+# troque as tasks lint/test pelas do stack. Registre a escolha num ADR.
+
+[tools]
+node = "24"          # base do Codex e do OpenCode (npm); fixe a versão exata num commit próprio
+"npm:@openai/codex" = "0.166.0"
+"npm:opencode-ai" = "1.19.5"
+# Agentes: preenchidos por "mise run agentes:setup" com a versão publicada há 7+ dias.
+# "npm:@openai/codex" = "x.y.z"
+# "npm:opencode-ai" = "x.y.z"
+
+[env]
+_.file = ".env"
+CODEX_HOME = "{{env.HOME}}/.config/codex"   # login e config do Codex no volume trato-config
+
+[tasks.setup]
+description = "Prepara o projeto do zero (rode após clonar)"
+run = [
+  "test -f .env || cp .env.example .env",
+  "mise install",
+  "echo '✓ Setup completo. Agentes: mise run agentes:setup'",
+]
+
+[tasks."agentes:versoes"]
+description = "Versão mais nova publicada há 7+ dias do Codex e do OpenCode"
+run = "node scripts/versao-elegivel.mjs @openai/codex opencode-ai"
+
+[tasks."agentes:setup"]
+description = "Fixa Codex/OpenCode na versão elegível e prepara os logins no volume"
+run = [
+  "for p in @openai/codex opencode-ai; do v=$(node scripts/versao-elegivel.mjs --so-versao \"$p\"); mise use \"npm:$p@$v\"; done",
+  "mkdir -p \"$CODEX_HOME\" ~/.config/opencode-data ~/.local/share",
+  "test -f \"$CODEX_HOME/config.toml\" || cp config/codex.toml \"$CODEX_HOME/config.toml\"",
+  "test -e ~/.local/share/opencode || ln -s ~/.config/opencode-data ~/.local/share/opencode",
+  "echo '✓ Logins: codex login --device-auth · opencode auth login · claude (/login)'",
+]
+
+[tasks.lint]
+description = "Verifica estilo (definido quando o stack for escolhido)"
+run = "echo 'lint: ainda sem stack'"
+
+[tasks.test]
+description = "Roda os testes (definido quando o stack for escolhido)"
+run = "node --test scripts/*.test.mjs"
+
+[tasks.check]
+description = "Portão de qualidade (lint + testes)"
+depends = ["lint", "test"]
