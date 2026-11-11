@@ -1,13 +1,29 @@
-# TRATO
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/readme/trato-header-dark.png">
+    <img src="assets/branding/readme/trato-header-light.png" alt="Trato — Do planejamento à fiscalização, tudo bem tratado." width="900">
+  </picture>
+</p>
 
-**Tramitação, Registro, Acompanhamento, Transparência e Obrigações**
+<p align="center">
+  <strong>Tramitação, Registro, Acompanhamento, Transparência e Obrigações</strong>
+</p>
 
-Plataforma de código aberto para apoiar a **gestão de contratações e contratos**, do planejamento ao acompanhamento da execução, fiscalização e encerramento.
+<p align="center">
+  Plataforma de código aberto para gestão de contratações e contratos, do planejamento à fiscalização e ao encerramento.
+</p>
 
-[![Licença: AGPL-3.0-only](https://img.shields.io/badge/licen%C3%A7a-AGPL--3.0--only-blue.svg)](LICENSE)
-![Status: em desenvolvimento](https://img.shields.io/badge/status-em%20desenvolvimento-lightgrey)
+<p align="center">
+  <a href="LICENSE"><img alt="Licença AGPL-3.0-only" src="https://img.shields.io/badge/licen%C3%A7a-AGPL--3.0--only-blue.svg"></a>
+  <img alt="Status: em desenvolvimento" src="https://img.shields.io/badge/status-em%20desenvolvimento-lightgrey">
+</p>
 
-## Sobre o projeto
+<h2>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/readme/headings/sobre-dark.png">
+    <img src="assets/branding/readme/headings/sobre-light.png" alt="Sobre o projeto" width="720">
+  </picture>
+</h2>
 
 O **TRATO** é uma iniciativa independente de software livre, concebida para organizar informações, atividades e responsabilidades ao longo do ciclo de vida das contratações.
 
@@ -15,7 +31,12 @@ A proposta é oferecer uma base **aberta, modular e adaptável**, que possa ser 
 
 > **Estado atual:** projeto em fase inicial. Os recursos listados abaixo representam o escopo pretendido, e não funcionalidades já disponíveis.
 
-## Escopo planejado
+<h2>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/readme/headings/escopo-dark.png">
+    <img src="assets/branding/readme/headings/escopo-light.png" alt="Escopo planejado" width="720">
+  </picture>
+</h2>
 
 - **Planejamento:** necessidades, solicitações, estudos, termos de referência e documentos preparatórios.
 - **Contratações:** etapas, responsáveis, documentos, prazos e formalização.
@@ -25,7 +46,12 @@ A proposta é oferecer uma base **aberta, modular e adaptável**, que possa ser 
 
 As funcionalidades serão implementadas gradualmente e poderão variar conforme o contexto de adoção. O TRATO **não substitui a análise jurídica, as decisões administrativas nem os controles exigidos de cada organização**.
 
-## Princípios de desenvolvimento
+<h2>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/readme/headings/principios-dark.png">
+    <img src="assets/branding/readme/headings/principios-light.png" alt="Princípios de desenvolvimento" width="720">
+  </picture>
+</h2>
 
 - **Código aberto:** possibilitar auditoria, colaboração e reutilização.
 - **Independência:** não vincular a solução a um único órgão, fornecedor ou modelo de contratação.
@@ -34,13 +60,25 @@ As funcionalidades serão implementadas gradualmente e poderão variar conforme 
 - **Acessibilidade e usabilidade:** priorizar interfaces claras, inclusivas e consistentes.
 - **Segurança e privacidade:** considerar controle de acesso e proteção de dados desde a concepção.
 
-## Interface e identidade visual
+<h2>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/readme/headings/interface-dark.png">
+    <img src="assets/branding/readme/headings/interface-light.png" alt="Interface e identidade visual" width="720">
+  </picture>
+</h2>
+
+A identidade visual do Trato utiliza uma capivara minimalista como mascote, representando organização, colaboração e cuidado com cada etapa da contratação. O lema do projeto é **“Do planejamento à fiscalização, tudo bem tratado.”**
 
 O projeto pretende adotar, quando aplicável, referências e componentes do [Padrão Digital de Governo — Design System GOV.BR](https://www.gov.br/ds/home), inclusive para acessibilidade e consistência visual.
 
 **O TRATO não é um produto oficial do Governo Federal e não possui vínculo ou endosso institucional.** A utilização de padrões visuais não autoriza o uso indevido de marcas, símbolos oficiais ou identidade que gere confusão sobre sua origem.
 
-## Roteiro inicial
+<h2>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/readme/headings/roteiro-dark.png">
+    <img src="assets/branding/readme/headings/roteiro-light.png" alt="Roteiro inicial" width="720">
+  </picture>
+</h2>
 
 - [ ] Definir requisitos e fluxos principais de contratação e fiscalização.
 - [ ] Documentar a arquitetura e o modelo de dados.
@@ -52,11 +90,21 @@ O projeto pretende adotar, quando aplicável, referências e componentes do [Pad
 
 A lista é preliminar e poderá ser revista conforme a evolução do projeto.
 
-## Instalação
+<h2>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/readme/headings/instalacao-dark.png">
+    <img src="assets/branding/readme/headings/instalacao-light.png" alt="Instalação" width="720">
+  </picture>
+</h2>
 
 As instruções de instalação serão publicadas quando houver uma primeira versão executável. Até lá, este repositório documenta a concepção e a evolução do projeto.
 
-## Como contribuir
+<h2>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/readme/headings/contribuir-dark.png">
+    <img src="assets/branding/readme/headings/contribuir-light.png" alt="Como contribuir" width="720">
+  </picture>
+</h2>
 
 Sugestões de funcionalidades, relatos de problemas e contribuições técnicas são bem-vindos.
 
@@ -66,7 +114,12 @@ Sugestões de funcionalidades, relatos de problemas e contribuições técnicas 
 
 Para comunicar possíveis vulnerabilidades, **não divulgue detalhes sensíveis em issues públicas**; utilize um canal privado de contato com a manutenção quando estiver disponível.
 
-## Licença
+<h2>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/readme/headings/licenca-dark.png">
+    <img src="assets/branding/readme/headings/licenca-light.png" alt="Licença" width="720">
+  </picture>
+</h2>
 
 O TRATO é um software livre distribuído sob a **GNU Affero General Public License, versão 3 (AGPL-3.0-only)**. Consulte o texto integral no arquivo [LICENSE](LICENSE).
 
@@ -78,6 +131,12 @@ O TRATO também pode funcionar ao lado de outros softwares, inclusive proprietá
 
 Identificador SPDX: `AGPL-3.0-only`.
 
-## Independência e responsabilidade
+<h2>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/branding/readme/headings/independencia-dark.png">
+    <img src="assets/branding/readme/headings/independencia-light.png" alt="Independência e responsabilidade" width="720">
+  </picture>
+</h2>
 
 O TRATO é um projeto independente. A adoção da solução não implica certificação, homologação ou conformidade automática com normas administrativas, contratuais ou de proteção de dados. Cada organização é responsável por validar sua implantação e seus processos.
+

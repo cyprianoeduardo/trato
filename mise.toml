@@ -52,3 +52,7 @@ run = "node --test scripts/*.test.mjs"
 [tasks.check]
 description = "Portão de qualidade (lint + testes)"
 depends = ["lint", "test"]
+
+[tasks."fila:codex"]
+description = "Instala o /prompts:proxima no Codex deste projeto"
+run = "mkdir -p \"${CODEX_HOME:-$HOME/.codex}/prompts\" && cp config/codex-prompts/proxima.md \"${CODEX_HOME:-$HOME/.codex}/prompts/\""

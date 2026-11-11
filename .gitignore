@@ -17,3 +17,7 @@ build/
 *.log
 .vscode/*
 !.vscode/extensions.json
+
+# Fila de issues (dev-fila-linear)
+.worktrees/
+config/fila.local.md

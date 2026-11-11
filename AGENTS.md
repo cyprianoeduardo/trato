@@ -38,3 +38,8 @@ com prós e contras e espere a decisão; a escolha vira ADR (`docs/adr/`).
 
 Ver `docs/adr/0005`. Podman rootless do usuário que abre o projeto; `workspaceMount` com
 `relabel=private`; Dev Containers com `dockerPath = podman`; nenhum socket no container.
+
+## Fila de issues (Linear)
+
+Quando o Eduardo pedir a próxima issue (`/proxima`, `/prompts:proxima`), siga
+`docs/fila-de-issues.md`. Trabalhe em `.worktrees/<ID>`, entregue PR e nunca faça merge.
